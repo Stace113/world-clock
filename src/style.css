@@ -1,7 +1,38 @@
+body {
+    background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/136/121/original/World_map_blank_without_borders.svg.png?1722247481);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    max-width: 600px;
+    display: block;
+    margin: 75px auto;
+    background: rgba(14, 111, 171, 0.923);
+    padding: 30px;
+    border-radius: 8px;
+    color: rgb(0, 0, 0);
+}
+
+select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
 h1 {
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    color: white;
 }
 
 footer {
     text-align: center;
+    color: rgba(0, 0, 0, 0.777);
+    margin-top: 50px;
+    font-size: 14px;
+    font-family: "Times New Roman", Times, serif;
 }
