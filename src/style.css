@@ -69,8 +69,7 @@ h2 {
 
 footer {
     text-align: center;
-    color: rgba(0, 0, 0, 0.882);
-    margin-top: 50px;
-    font-size: 14px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
     font-family: "Times New Roman", Times, serif;
 }
