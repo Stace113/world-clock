@@ -6,7 +6,7 @@ function updateTime() {
         let bristolTimeElement = bristolElement.querySelector(".time");
         let bristolTime = moment().tz("Europe/London");
 
-        bristolDateElement.innerHTML = bristolTime.format("MMMM Do YYYY");
+        bristolDateElement.innerHTML = bristolTime.format("dddd Do MMMM YYYY");
         bristolTimeElement.innerHTML = bristolTime.format(
             "HH:mm:ss [<small>]A[</small>]"
         );
@@ -19,7 +19,8 @@ function updateTime() {
         let amsterdamTimeElement = amsterdamElement.querySelector(".time");
         let amsterdamTime = moment().tz("Europe/Amsterdam");
 
-        amsterdamDateElement.innerHTML = amsterdamTime.format("MMMM Do YYYY");
+        amsterdamDateElement.innerHTML =
+            amsterdamTime.format("dddd Do MMMM YYYY");
         amsterdamTimeElement.innerHTML = amsterdamTime.format(
             "HH:mm:ss [<small>]A[</small>]"
         );
@@ -32,7 +33,7 @@ function updateTime() {
         let zürichTimeElement = zürichElement.querySelector(".time");
         let zürichTime = moment().tz("Europe/Zurich");
 
-        zürichDateElement.innerHTML = zürichTime.format("MMMM Do YYYY");
+        zürichDateElement.innerHTML = zürichTime.format("dddd Do MMMM YYYY");
         zürichTimeElement.innerHTML = zürichTime.format(
             "HH:mm:ss [<small>]A[</small>]"
         );
@@ -45,7 +46,7 @@ function updateTime() {
         let bangkokTimeElement = bangkokElement.querySelector(".time");
         let bangkokTime = moment().tz("Asia/Bangkok");
 
-        bangkokDateElement.innerHTML = bangkokTime.format("MMMM Do YYYY");
+        bangkokDateElement.innerHTML = bangkokTime.format("dddd Do MMMM YYYY");
         bangkokTimeElement.innerHTML = bangkokTime.format(
             "HH:mm:ss [<small>]A[</small>]"
         );
@@ -53,10 +54,13 @@ function updateTime() {
 }
 
 updateTime();
-setInterval(updateTime);
+setInterval(updateTime, 1000);
 
 function updateCity(event) {
     let cityTimeZone = event.target.value;
+    if (cityTimeZone === "current") {
+        cityTimeZone = moment.tz.guess();
+    }
     let cityName = cityTimeZone.replace("_", " ").split("/")[1];
     let cityTime = moment().tz(cityTimeZone);
     let citiesElement = document.querySelector("#cities");
@@ -65,7 +69,7 @@ function updateCity(event) {
                     <div>
                         <h2>${cityName}</h2>
                         <div class="date">${cityTime.format(
-                            "MMMM Do YYYY"
+                            "dddd Do MMMM YYYY"
                         )}</div>
                     </div>
                     <div class="time">${cityTime.format(
